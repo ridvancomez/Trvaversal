@@ -21,11 +21,13 @@ Bu proje portföy amaçlı geliştirilmiş bir dinamik web sitesidir. Müşteril
 - **Member**: Kullanıcılar turlara kaydolabilir ve kendilerine ait bilgilerle giriş yapabilir.  
 - **Admin**: Admin kullanıcıları, yeni turlar oluşturabilir, mevcut turları düzenleyebilir ve kullanıcılara roller atayabilir. Web sitesinin yönetiminden sorumludurlar.
 
+## Ekran Görüntüleri
+### 🖼️ Ana Sayfa Arayüzü
+![Ana Sayfa](ScreenShots/UI1.png)
 ## Kurulum ve Çalıştırma  
 1. Projeyi [GitHub Repository] üzerinden indirip bilgisayarınıza çekin.  
 2. Veritabanı için migration işlemini gerçekleştirin:  
    ```bash
    dotnet ef database update
 
-   ### 🖼️ Ana Sayfa Arayüzü
-![Ana Sayfa](ScreenShots/UI1.png)
+   
