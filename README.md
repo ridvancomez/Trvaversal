@@ -22,8 +22,39 @@ Bu proje portföy amaçlı geliştirilmiş bir dinamik web sitesidir. Müşteril
 - **Admin**: Admin kullanıcıları, yeni turlar oluşturabilir, mevcut turları düzenleyebilir ve kullanıcılara roller atayabilir. Web sitesinin yönetiminden sorumludurlar.
 
 ## Ekran Görüntüleri
-### 🖼️ Ana Sayfa Arayüzü
+### Ana Sayfa Arayüzü
 ![Ana Sayfa](ScreenShots/UI1.png)
+
+### Ana Sayfa Turlar Listesi
+![Ana Sayfa Turlar](ScreenShots/UI2.png)
+
+### Login Ekranı
+![Login](ScreenShots/Login.png)
+
+### Register Ekranı
+![Register](ScreenShots/Register.png)
+
+### Member Dashboard
+![Member Dashboard](ScreenShots/MemberDashboard.png)
+
+### Member Rezervasyon Sayfası
+![Member Rezervasyon](ScreenShots/MemberReservation.png)
+
+### Admin Dashboard
+![Admin Dashboard](ScreenShots/AdminDashboard.png)
+
+### Admin Rota Sayfası
+![Admin Rota](ScreenShots/AdminDestionation.png)
+
+### Admin Rezervasyon Sayfası
+![Admin Rezervasyon](ScreenShots/AdminReservation.png)
+
+### Admin Rol Sayfası
+![Admin Rol](ScreenShots/AdminRole.png)
+
+### Admin Rol Atama Sayfası
+![Admin Rol Atama](ScreenShots/AdminAssignRole.png)
+
 ## Kurulum ve Çalıştırma  
 1. Projeyi [GitHub Repository] üzerinden indirip bilgisayarınıza çekin.  
 2. Veritabanı için migration işlemini gerçekleştirin:  
