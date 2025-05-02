@@ -1,0 +1,44 @@
+﻿@model List<DataTransferObjectLayer.Concrete.RoleListDTO>
+@{
+    ViewData["Title"] = "AssignRole";
+    Layout = "~/Views/Shared/_AdminPanelLayout.cshtml";
+    int count = 0;
+}
+
+<div class="card m-4">
+    <div class="d-flex justify-content-between align-items-center mx-4">
+        <h5 class="card-header px-0 mx-0">Kullanıcı Rol Tablosu</h5>
+    </div>
+    <form method="post">
+        <div class="card-body">
+            <div class="table-responsive text-nowrap">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Rol</th>
+                            <td>Yetkiniz</td>
+                            <td>Yetki Ver / Kaldır</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @for (int i = 0; i < Model.Count; i++)
+                        {
+                            <input type="hidden" asp-for="@Model[i].Id" />
+                            <input type="hidden" asp-for="@Model[i].Name" />
+                            count++;
+                            <tr>
+                                <td>@count</td>
+                                <td>@Model[i].Name</td>
+                                <td> <span class="badge @(Model[i].Exist ? "bg-label-success" : "bg-label-warning")">@(Model[i].Exist ? "Yetkili" : "Yetkisiz")</span> </td>
+                                <td><input type="checkbox" asp-for="@Model[i].Exist" /></td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+            <button type="submit" class="btn btn-primary mt-3">Kaydet</button>
+        </div>
+    </form>
+</div>
+

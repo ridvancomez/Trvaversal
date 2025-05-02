@@ -1,0 +1,40 @@
+﻿@model List<EntityLayer.Concrete.Comment>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminPanelLayout.cshtml";
+}
+
+<div class="card m-4">
+    <div class="d-flex justify-content-between align-items-center mx-4">
+        <h5 class="card-header px-0 mx-0">Yorumlar Tablosu</h5>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive text-nowrap">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>İsim</th>
+                        <th>Şehir</th>
+                        <th>Tarih</th>
+                        <th>Durum</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td> @item.Id </td>
+                            <td> @item.Name </td>
+                            <td> @item.Destination.City </td>
+                            <td> @item.Date.ToString("dd/MMM/yyyy") </td>
+                            <td> <span class="badge @(item.Status == true ? "bg-label-success" : "bg-label-primary") me-1">@(item.Status == true ? "Aktif" : "Pasif")</span> </td>
+                        </tr>
+                    }
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+

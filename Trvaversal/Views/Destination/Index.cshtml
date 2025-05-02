@@ -1,0 +1,47 @@
+﻿@model List<EntityLayer.Concrete.Destination>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+    <!-- about breadcrumb -->
+    <section class="w3l-about-breadcrumb text-left">
+        <div class="breadcrumb-bg breadcrumb-bg-about py-sm-5 py-4">
+            <div class="container">
+                <h2 class="title">Destinations </h2>
+                <ul class="breadcrumbs-custom-path mt-2">
+                    <li><a href="/Home/Index">Anasayfa</a></li>
+                    <li class="active"><span class="fa fa-arrow-right mx-2" aria-hidden="true"></span> Rotalar </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <!-- //about breadcrumb -->
+    <!--  Work gallery section -->
+    <section class="grids-1 py-5">
+        <div class="grids py-lg-5 py-md-4">
+            <div class="container">
+                <h3 class="hny-title mb-5">Destinations</h3>
+                <div class="row">
+                    @foreach(var item in Model)
+                    {
+                    <div class="col-lg-4 col-md-4 col-6 mt-4">
+                        <div class="column">
+                                <a href="/Destination/DestinationDetail/@item.Id"><img src="@item.CoverImage" alt="@item.City" style="aspect-ratio:3/3.5; object-fit:cover" class="img-fluid"></a>
+                            <div class="info">
+                                <h4><a href="/Destination/DestinationDetail/@item.Id">@item.Title</a></h4>
+                                <h5 style="color:#ff1654" class="mt-2">@item.City</h5>
+                                <hr />
+                                <p>@item.DayNigth</p>
+                                <div class="dst-btm">
+                                    <h6 class="">Fiyat </h6>
+                                    <span>@item.Price ₺</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </section>

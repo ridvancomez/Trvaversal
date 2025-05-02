@@ -1,0 +1,30 @@
+﻿@model DataTransferObjectLayer.Concrete.ReservationDTO
+@{
+    ViewData["Title"] = "AddReservation";
+    Layout = "~/Views/Shared/_PanelLayout.cshtml";
+}
+
+<div class="container-fluid py-4">
+    <div class="row">
+        <div class="col-12">
+            <div class="card mb-4 p-3">
+                <div class="card-header pb-0">
+                    <h6>Profil Düzenleme Sayfası</h6>
+                </div>
+                <form method="post" enctype="multipart/form-data">
+                    @Html.Label("Rota Seçin")
+                    @Html.DropDownListFor(x => x.DestinationId, (List<SelectListItem>)ViewBag.Destinations, new { @class = "form-control" })
+                    <br />
+                    @Html.Label("Ziyaretçi Sayısı")
+                    <input type="number" asp-for="PersonCount" class="form-control text-xs" />
+                    <br />
+                    @Html.Label("Başlangıç Tarihi")
+                    <input type="date" asp-for="CheckIn" class="form-control text-xs" />
+                    <br />
+                    <button type="submit" class="btn btn-primary">Ekle</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</div>

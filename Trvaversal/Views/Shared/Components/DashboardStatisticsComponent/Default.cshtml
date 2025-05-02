@@ -1,0 +1,81 @@
+﻿@{
+    Random random = new Random();
+}
+<div class="col-md-6 col-lg-4 order-2 mb-4">
+    <div class="card h-100">
+        <div class="row align-items-center h-100">
+            <div class="col-lg-6 col-md-12 col-6 mt-4">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="card-title d-flex align-items-start justify-content-between">
+                            <div class="avatar flex-shrink-0">
+                                @{
+                                    int index = random.Next(0, ViewBag.Colors.Count);
+                                }
+                                <span class="avatar-initial rounded bg-label-@(ViewBag.Colors[index])">
+                                    <i class="bi bi-hand-thumbs-up"></i>
+                                </span>
+                            </div>
+                        </div>
+                        <span class=" d-block">Referanslarımız</span>
+                        <h3 class="card-title mb-2">@ViewBag.TotalTestimonialCount</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 mt-4">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="card-title d-flex align-items-start justify-content-between">
+                            <div class="avatar flex-shrink-0">
+                                @{
+                                    int index1 = random.Next(0, ViewBag.Colors.Count);
+                                }
+                                <span class="avatar-initial rounded bg-label-@(ViewBag.Colors[index1])">
+                                    <i class="bi bi-people"></i>
+                                </span>
+                            </div>
+                        </div>
+                        <span>Misafirlerimiz</span>
+                        <h3 class="card-title text-nowrap mb-1">@ViewBag.TotalPersonCount</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="card-title d-flex align-items-start justify-content-between">
+                            <div class="avatar flex-shrink-0">
+                                @{
+                                    int index2 = random.Next(0, ViewBag.Colors.Count);
+                                }
+                                <span class="avatar-initial rounded bg-label-@(ViewBag.Colors[index2])">
+                                    <i class="bi bi-person-badge"></i>
+                                </span>
+                            </div>
+                        </div>
+                        <span class="d-block mb-1">Rehberlerimiz</span>
+                        <h3 class="card-title text-nowrap mb-2">@ViewBag.TotalGuideCount</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="card-title d-flex align-items-start justify-content-between">
+                            <div class="avatar flex-shrink-0">
+                                @{
+                                    int index3 = random.Next(0, ViewBag.Colors.Count);
+                                }
+                                <span class="avatar-initial rounded bg-label-@(ViewBag.Colors[index3])">
+                                    <i class="bi bi-map"></i>
+                                </span>
+                            </div>
+                        </div>
+                        <span class=" d-block mb-1">Turlarımız</span>
+                        <h3 class="card-title mb-2">@ViewBag.TotalDestinationCount</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

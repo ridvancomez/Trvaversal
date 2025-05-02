@@ -1,0 +1,86 @@
+﻿@model List<EntityLayer.Concrete.Comment>
+@{
+    ViewData["Title"] = "Default";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="comments mt-5">
+    <h4 class="side-title ">Yorumlar (@Model.Count)</h4>
+
+    @foreach (var item in Model)
+    {
+        <div class="media mt-4">
+            <div class="media-body">
+
+                <ul class="time-rply mb-2">
+                    <li>
+                        <a class="name mt-0 mb-2 d-block">@item.Name</a>
+                        @item.Date.ToString("dd.MM.yyyy")
+
+                    </li>
+                </ul>
+                <p>
+                    @item.Message
+                </p>
+            </div>
+        </div>
+    }
+
+
+
+</div>
+
+<div class="leave-comment-form mt-5" id="reply">
+    <h4 class="side-title mb-2">Bir Yorum Bırakın</h4>
+    <p class="mb-4">
+        E-posta adresiniz yayınlanmayacaktır. Gerekli alanlar işaretlenmiştir *
+    </p>
+
+    <div class="form-group">
+        <textarea name="Comment" class="form-control" placeholder="Yorumunuz*" required=""
+                  spellcheck="false"></textarea>
+    </div>
+    <div class="input-grids row">
+
+        <div class="form-group col-lg-6">
+            <input type="text" name="Name" class="form-control" placeholder="Ad Soyad*"
+                   required="">
+        </div>
+        <div class="form-group col-lg-6">
+            <input type="email" name="Email" class="form-control" placeholder="E Posta*" required="">
+        </div>
+    </div>
+
+    <div class="submit text-right">
+        <button class="btn btn-style btn-primary" id="submitComment">Yorumu Gönder </button>
+    </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+        $(document).ready(function () {
+        $("#submitComment").click(function (e) {
+            e.preventDefault(); // Sayfanın yeniden yüklenmesini önler
+
+            var commentData = {
+                Message: $("textarea[name='Comment']").val(),
+                Name: $("input[name='Name']").val(),
+                Email: $("input[name='Email']").val(),
+                DestinationId: @ViewBag.DestinationId
+            };
+
+            $.ajax({
+                url: "/Comment/AddComment",
+                type: "POST",
+                contentType: "application/json",
+                data: JSON.stringify(commentData),
+                success: function (response) {
+                    
+                    location.reload(); // Başarılı gönderim sonrası sayfayı yeniler
+                },
+                error: function (xhr, status, error) {
+                    alert("Yorum gönderilirken bir hata oluştu: " + xhr.responseText);
+                }
+            });
+        });
+    });
+</script>

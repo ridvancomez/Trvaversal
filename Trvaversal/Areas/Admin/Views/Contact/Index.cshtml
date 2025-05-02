@@ -1,0 +1,63 @@
+﻿@model EntityLayer.Concrete.Contact
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminPanelLayout.cshtml";
+}
+
+<div class="card m-4">
+    <div class="card-header">
+        <h5 class="mb-0">Yeni Rota Ekle</h5>
+    </div>
+    <div class="card-body">
+        <form method="post">
+            <div class="row mb-3">
+                <label class="col-sm-2 col-form-label" for="basic-default-name">Açıklama</label>
+                <div class="col-sm-10">
+                    <textarea asp-for="Description" class="form-control"></textarea>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label class="col-sm-2 col-form-label" for="basic-default-name">Email</label>
+                <div class="col-sm-10">
+                    <input type="email" asp-for="Email" class="form-control" />
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label class="col-sm-2 col-form-label" for="basic-default-name">Adres</label>
+                <div class="col-sm-10">
+                    <textarea asp-for="Adress" class="form-control"></textarea>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label class="col-sm-2 col-form-label" for="basic-default-name">Telefon Numarası</label>
+                <div class="col-sm-10">
+                    <input type="text" asp-for="Phone" class="form-control" />
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label class="col-sm-2 col-form-label" for="basic-default-name">Harita Lokasyonu</label>
+                <div class="col-sm-10">
+                    <input type="text" asp-for="MapLocation" class="form-control" />
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label class="col-sm-2 col-form-label" for="basic-default-name">Durum</label>
+                <div class="col-sm-10">
+                    <input type="checkbox" asp-for="Status" />
+                </div>
+            </div>
+
+            <div class="row justify-content-end">
+                <div class="col-sm-10">
+                    <button type="submit" class="btn btn-primary">Gönder</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+

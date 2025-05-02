@@ -1,0 +1,36 @@
+﻿@model List<EntityLayer.Concrete.Guide>
+
+<div class="col-md-6 col-lg-4 order-2 mb-4">
+    <div class="card h-100">
+        <div class="card-header d-flex align-items-center justify-content-center mb-2">
+            <h5 class="card-title m-0 me-2">Rehberlerimiz</h5>
+        </div>
+        <div class="card-body">
+            <ul class="p-0 m-0">
+                @{Random rnd = new Random();}
+                @foreach(var item in Model)
+                {
+                    int index = rnd.Next(0, ViewBag.colors.Count);
+                    <li class="d-flex mb-4 pb-1">
+                        <div class="avatar flex-shrink-0 me-3">
+                            <span class="avatar-initial rounded bg-label-@(ViewBag.colors[index])">
+                                <i class="bi bi-geo-alt-fill"></i>
+                            </span>
+                        </div>
+                        <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
+                            <div class="me-2">
+                                <small class="text-muted d-block mb-1">@item.Name</small>
+                                <h6 class="mb-0">@item.Title</h6>
+                            </div>
+                            @* <div class="user-progress d-flex align-items-center gap-1">
+                                <h6 class="mb-0">+82.6</h6>
+                                <span class="text-muted">USD</span>
+                            </div> *@
+                        </div>
+                    </li>
+                }
+               
+            </ul>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,82 @@
+﻿@model List<EntityLayer.Concrete.AboutImage>
+
+<div class="best-rooms py-5">
+    <div class="container py-md-5">
+        <div class="ban-content-inf row">
+            <div class="maghny-gd-1 col-lg-6">
+                <div class="maghny-grid">
+                    <figure class="effect-lily border-radius  m-0">
+                        <img class="img-fluid" src="~/AboutImages/@Model[0].Image" alt="" />
+                        <figcaption>
+                            <div>
+                                <h4>@Model[0].Title</h4>
+                                <p>@Model[0].Description </p>
+                            </div>
+
+                        </figcaption>
+                    </figure>
+                </div>
+            </div>
+            <div class="maghny-gd-1 col-lg-6 mt-lg-0 mt-4">
+                <div class="row">
+                    <div class="maghny-gd-1 col-6">
+                        <div class="maghny-grid">
+                            <figure class="effect-lily border-radius">
+                                <img class="img-fluid" src="@Model[1].Image" alt="" />
+                                <figcaption>
+                                    <div>
+                                        <h4>@Model[1].Title</h4>
+                                        <p>@Model[1].Description </p>
+                                    </div>
+
+                                </figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                    <div class="maghny-gd-1 col-6">
+                        <div class="maghny-grid">
+                            <figure class="effect-lily border-radius">
+                                <img class="img-fluid" src="@Model[2].Image" alt="" />
+                                <figcaption>
+                                    <div>
+                                        <h4>@Model[2].Title</h4>
+                                        <p>@Model[2].Description</p>
+                                    </div>
+
+                                </figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                    <div class="maghny-gd-1 col-6 mt-4">
+                        <div class="maghny-grid">
+                            <figure class="effect-lily border-radius">
+                                <img class="img-fluid" src="@Model[3].Image" alt="" />
+                                <figcaption>
+                                    <div>
+                                        <h4>@Model[3].Title</h4>
+                                        <p>@Model[3].Description</p>
+                                    </div>
+
+                                </figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                    <div class="maghny-gd-1 col-6 mt-4">
+                        <div class="maghny-grid">
+                            <figure class="effect-lily border-radius">
+                                <img class="img-fluid" src="@Model[4].Image" alt="" />
+                                <figcaption>
+                                    <div>
+                                        <h4>@Model[4].Title</h4>
+                                        <p>@Model[4].Description </p>
+                                    </div>
+
+                                </figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

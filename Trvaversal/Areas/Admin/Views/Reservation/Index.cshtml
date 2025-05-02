@@ -1,0 +1,61 @@
+﻿@model List<EntityLayer.Concrete.Reservation>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminPanelLayout.cshtml";
+    Dictionary<string, string> statusColors = new();
+    statusColors.Add("Beklemede", "badge bg-label-warning");
+    statusColors.Add("Onaylandı", "badge bg-label-primary");
+    statusColors.Add("İptal Edildi", "badge bg-label-danger");
+    statusColors.Add("Gerçekleştirildi", "badge bg-label-success");
+}
+
+<div class="card m-4">
+    <div class="d-flex justify-content-between align-items-center mx-4">
+        <h5 class="card-header px-0 mx-0">Rezervasyonlar Tablosu</h5>
+        <a href="/Admin/Statistic/AddStatistic" class="btn btn-success d-block">Yeni Rezervasyon Ekle</a>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive text-nowrap">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>İsim</th>
+                        <th>Şehir</th>
+                        <th>Misafir Sayısı</th>
+                        <th>Check In</th>
+                        <th>Durum</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td> @item.Id </td>
+                            <td> @(item.AppUser.Name + " " + item.AppUser.Surname)  </td>
+                            <td> @item.Destination.City </td>
+                            <td> @item.PersonCount </td>
+                            <td> @item.CheckIn.ToString("dd/MMM/yyyy") </td>
+                            <td> <span class="@(statusColors[item.Status]) me-1">@item.Status</span> </td>
+                            <td>
+                                <div class="dropdown">
+                                    <button type="button"
+                                            class="btn p-0 dropdown-toggle hide-arrow"
+                                            data-bs-toggle="dropdown">
+                                        <i class="bx bx-dots-vertical-rounded"></i>
+                                    </button>
+                                    <div class="dropdown-menu">
+                                        <a class="dropdown-item" href="/Admin/Reservation/UpdateReservation/@item.Id"><i class="bx bx-edit-alt me-1"></i> Güncelle</a>
+                                        <a class="dropdown-item" href="/Admin/Reservation/DeleteReservation/@item.Id"><i class="bx bx-trash me-1"></i> Sil</a>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    }
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+

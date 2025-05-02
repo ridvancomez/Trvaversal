@@ -1,0 +1,46 @@
+﻿@model List<DataTransferObjectLayer.Concrete.DestinationPersonCountDTO>
+
+<div class="col-md-6 col-lg-4 col-xl-4 order-0 mb-4">
+    <div class="card h-100">
+        <div class="card-header d-flex align-items-center justify-content-center pb-0">
+            <div class="card-title mb-0">
+                <h5 class="text-center m-0 mb-1">Toplam Tur Sayısı</h5>
+            </div>
+
+        </div>
+        <div class="card-body">
+            <div class="d-flex align-items-center justify-content-center mb-3">
+                <div class="d-flex flex-column align-items-center gap-1">
+                    <h2 class="mb-2 mt-2">@ViewBag.ReservationCount</h2>
+                    <span>Tur İstatistikleri</span>
+                </div>
+            </div>
+            <ul class="p-0 m-0">
+                @{
+
+                    Random rnd = new Random();
+                    
+                }
+                @foreach (var item in Model)
+                {
+                    int index = rnd.Next(0, ViewBag.colors.Count);
+                    <li class="d-flex mb-4 pb-1">
+                        <div class="avatar flex-shrink-0 me-3">
+                            <span class="avatar-initial rounded bg-label-@(ViewBag.colors[index])">
+                                <i class="bi bi-geo-alt-fill"></i>
+                            </span>
+                        </div>
+                        <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
+                            <div class="me-2">
+                                <h6 class="mb-0">@item.City</h6>
+                            </div>
+                            <div class="user-progress pe-md-4">
+                                <small class="fw-semibold">@item.PersonCount</small>
+                            </div>
+                        </div>
+                    </li>
+                }
+            </ul>
+        </div>
+    </div>
+</div>

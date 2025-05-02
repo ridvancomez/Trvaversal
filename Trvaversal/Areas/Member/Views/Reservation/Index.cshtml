@@ -1,0 +1,101 @@
+﻿@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_PanelLayout.cshtml";
+}
+
+@model List<EntityLayer.Concrete.Reservation>
+<div class="container-fluid py-4">
+    <div class="row">
+        <div class="col-12">
+            <div class="card mb-4">
+                <div class="card-header pb-0">
+                    <h6>Rezervasyon Tablosu</h6>
+                </div>
+                <div class="card-body px-0 pt-0 pb-2">
+                    <div class="table-responsive p-0 overflow-hidden">
+                        <div class="row justify-content-between" style="margin-left:5px">
+                            <div class="col-md-3">
+                                <label>Rezervasyon Durumunu Seçin</label>
+                                <select class="form-select">
+                                    <option value="Tumu" selected>Tümü </option>
+                                    <option value="Onaylandı">Onaylandı</option>
+                                    <option value="İptal Edildi">İptal Edildi</option>
+                                    <option value="Beklemede">Beklemede</option>
+                                    <option value="Gerçekleştirildi">Gerçekleştirildi</option>
+                                </select>
+                            </div>
+                            <div class="col-md-3 d-flex justify-content-center align-items-center">
+                                <a href="/Member/Reservation/AddReservation" class="btn btn-secondary">Yeni Rezervasyon Oluştur</a>
+                            </div>
+                        </div>
+                        <hr />
+                        <table class="table align-items-center mb-0">
+                            <thead>
+                                <tr>
+                                    <th class="text-uppercase text-secondary font-weight-bolder p-3 opacity-7">#</th>
+                                    <th class="text-uppercase text-secondary font-weight-bolder p-3 opacity-7">Ziyaretçi Adı</th>
+                                    <th class="text-uppercase text-secondary font-weight-bolder p-3 opacity-7">Hedef Adı</th>
+                                    <th class="text-uppercase text-secondary font-weight-bolder p-3 opacity-7">Ziyaretçi Sayısı</th>
+                                    <th class="text-uppercase text-secondary font-weight-bolder p-3 opacity-7">Check In Tarihi</th>
+                                    <th class="text-uppercase text-secondary font-weight-bolder p-3 opacity-7">Durum</th>
+
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        @{
+                                            string name = item.AppUser.Name + " " + item.AppUser.Surname;
+                                        }
+
+                                        <td class=" text-xs font-weight-bolder p-3">@item.Id</td>
+                                        <td class=" text-xs font-weight-bolder p-3">@name</td>
+                                        <td class=" text-xs font-weight-bolder p-3">@item.Destination.City</td>
+                                        <td class=" text-xs font-weight-bolder p-3">@item.PersonCount</td>
+                                        <td class=" text-xs font-weight-bolder p-3">@item.CheckIn.ToString("dd/MMM/yyyy")</td>
+                                        <td class=" text-xs font-weight-bolder p-3">@item.Status</td>
+                                    </tr>
+                                }
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+    $(document).ready(function () {
+        $('select').change(function () {
+            var selected = $(this).children("option:selected").val();
+            $.ajax({
+                url: '/Member/Reservation/GetReservationByStatus',
+                type: 'POST',
+                data: { status: selected },
+                success: function (data) {
+        var tableBody = $("tbody");
+            tableBody.empty(); // Önce tabloyu temizle
+
+            $.each(data, function (index, item) {
+       var row = "<tr>" +
+                      "<td class='text-xs font-weight-bolder p-3'>" + item.id + "</td>" +
+                      "<td class='text-xs font-weight-bolder p-3'>" + item.name + "</td>" +
+                      "<td class='text-xs font-weight-bolder p-3'>" + item.city + "</td>" +
+                      "<td class='text-xs font-weight-bolder p-3'>" + item.personCount + "</td>" +
+                      "<td class='text-xs font-weight-bolder p-3'>" + item.checkIn + "</td>" +
+                      "<td class='text-xs font-weight-bolder p-3'>" + item.status + "</td>" +
+                      "</tr>";
+                tableBody.append(row);
+            });
+                },
+                error: function (error) {
+                    console.log(error);
+                }
+            });
+        });
+    });
+</script>

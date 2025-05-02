@@ -1,0 +1,50 @@
+﻿@model DataTransferObjectLayer.Concrete.TestimonialDTO
+@{
+    ViewData["Title"] = "UpdateTestimonial";
+    Layout = "~/Views/Shared/_AdminPanelLayout.cshtml";
+}
+
+<div class="card m-4">
+    <div class="card-header">
+        <h5 class="mb-0">Yeni Rota Resmi Ekle</h5>
+    </div>
+    <div class="card-body">
+        <form method="post" enctype="multipart/form-data">
+            <input type="hidden" asp-for="Id"/>
+            <div class="row mb-3">
+                <label class="col-sm-2 col-form-label" for="basic-default-name">İsim</label>
+                <div class="col-sm-10">
+                    <input type="text" asp-for="Client" class="form-control" />
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label class="col-sm-2 col-form-label" for="basic-default-name">Yorum</label>
+                <div class="col-sm-10">
+                    <textarea asp-for="Comment" class="form-control"></textarea>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label class="col-sm-2 col-form-label" for="basic-default-name">Durum (Aktif / Pasif)</label>
+                <div class="col-sm-10">
+                    <input type="checkbox" asp-for="Status" />
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label class="col-sm-2 col-form-label" for="basic-default-name">Müşteri Resmi</label>
+                <div class="col-sm-10">
+                    <input type="file" asp-for="Image" class="form-control" />
+                </div>
+            </div>
+            <div class="row justify-content-end">
+                <div class="col-sm-10">
+                    <button type="submit" class="btn btn-primary">Gönder</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+

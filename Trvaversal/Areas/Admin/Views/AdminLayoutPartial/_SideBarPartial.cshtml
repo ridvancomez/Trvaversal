@@ -1,0 +1,172 @@
+﻿<style>
+    .active:before {
+        rotate: 180deg;
+    }
+</style>
+<aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
+    <div class="app-brand demo">
+        <a href="/Admin/Dashboard/Index" class="app-brand-link">
+            <span class="app-brand-text demo menu-text fw-bolder ms-2 text-capitalize">Traversal</span>
+        </a>
+
+        <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto d-block d-xl-none">
+            <i class="bx bx-chevron-left bx-sm align-middle"></i>
+        </a>
+    </div>
+
+    <div class="menu-inner-shadow"></div>
+
+    <ul class="menu-inner py-1">
+
+        <li class="menu-item @(ViewBag.Page=="Dashboard" ? "active" : "")">
+            <a href="/Admin/Dashboard/Index" class="menu-link">
+
+                <i class="menu-icon tf-icons bi bi-grid"></i>
+                <div data-i18n="Analytics">Dashboard</div>
+            </a>
+        </li>
+
+        <li class="menu-item @(ViewBag.Page=="Statistics" ? "active" : "")">
+            <a href="/Admin/Statistics/Index" class="menu-link">
+
+                <i class="menu-icon tf-icons bi bi-bar-chart-line"></i>
+                <div data-i18n="Analytics">İstatistikler</div>
+            </a>
+        </li>
+
+        <li class="menu-item @(ViewBag.Page=="Reservation" ? "active" : "")">
+            <a href="/Admin/Reservation/Index" class="menu-link">
+
+                <i class="menu-icon tf-icons bi bi-calendar-check"></i>
+                <div data-i18n="Analytics">Rezervasyonlar</div>
+            </a>
+        </li>
+
+        <li class="menu-item @(ViewBag.Page=="Destination" ? "active" : "")">
+            <a href="/Admin/Destination/Index" class="menu-link">
+
+                <i class="menu-icon tf-icons bi bi-map"></i>
+                <div data-i18n="Analytics">Rotalar</div>
+            </a>
+        </li>
+
+        <li class="menu-item @(ViewBag.Page=="DestinationImages" ? "active" : "")">
+            <a href="/Admin/DestinationImage/Index" class="menu-link">
+
+                <i class="menu-icon tf-icons bi bi-images"></i>
+                <div data-i18n="Analytics">Rota Resimleri</div>
+            </a>
+        </li>
+
+        <li class="menu-item @(ViewBag.Page=="Guide" ? "active" : "")">
+            <a href="/Admin/Guide/Index" class="menu-link">
+
+                <i class="menu-icon tf-icons bi bi-person-badge"></i>
+                <div data-i18n="Analytics">Rehberlerimiz</div>
+            </a>
+        </li>
+
+        @* <li class="menu-item @(ViewBag.Page=="Highlights" ? "active" : "")">
+            <a href="/Admin/Highlights/Index" class="menu-link">
+
+                <i class="menu-icon tf-icons bi bi-star"></i>
+                <div data-i18n="Analytics">Öne Çıkanlar</div>
+            </a>
+        </li> *@
+
+        @* <li class="menu-item @(ViewBag.Page=="Highlights2" ? "active" : "")">
+            <a href="/Admin/Highlights2/Index" class="menu-link">
+
+                <i class="menu-icon tf-icons bi bi-gem"></i>
+                <div data-i18n="Analytics">Öne Çıknlar 2</div>
+            </a>
+        </li> *@
+
+        <li class="menu-item @(ViewBag.Page=="Referance" ? "active" : "")">
+            <a href="/Admin/Testimonial/Index" class="menu-link">
+
+                <i class="menu-icon tf-icons bi bi-hand-thumbs-up"></i>
+                <div data-i18n="Analytics">Referanslar</div>
+            </a>
+        </li>
+
+        @* <li class="menu-item @(ViewBag.Page=="About" ? "active" : "")">
+            <a href="/Admin/About/Index" class="menu-link">
+
+                <i class="menu-icon tf-icons bi bi-info-circle"></i>
+                <div data-i18n="Analytics">Hakkımda</div>
+            </a>
+        </li> *@
+
+        @* <li class="menu-item @(ViewBag.Page=="SubAbouts" ? "active" : "")">
+            <a href="/Admin/SubAbouts/Index" class="menu-link">
+
+                <i class="menu-icon tf-icons bi bi-info-square"></i>
+                <div data-i18n="Analytics">Alt Hakkımda</div>
+            </a>
+        </li> *@
+
+        <li class="menu-item @(ViewBag.Page=="AboutImages" ? "active" : "")">
+            <a href="/Admin/AboutImage/Index" class="menu-link">
+
+                <i class="menu-icon tf-icons bi bi-image"></i>
+                <div data-i18n="Analytics">Hakkımda Resimler</div>
+            </a>
+        </li>
+
+        @* <li class="menu-item @(ViewBag.Page=="Slider" ? "active" : "")">
+            <a href="/Admin/Slider/Index" class="menu-link">
+
+                <i class="menu-icon tf-icons bi bi-collection"></i>
+                <div data-i18n="Analytics">Slider</div>
+            </a>
+        </li> *@
+
+        <li class="menu-item @(ViewBag.Page=="Comment" ? "active" : "")">
+            <a href="/Admin/Comment/Index" class="menu-link">
+
+                <i class="menu-icon tf-icons bi bi-chat-left-text"></i>
+                <div data-i18n="Analytics">Yorumlar</div>
+            </a>
+        </li>
+
+        <li class="menu-item @(ViewBag.Page=="Contact" ? "active" : "")">
+            <a href="/Admin/Contact/Index" class="menu-link">
+
+                <i class="menu-icon tf-icons bi bi-telephone"></i>
+                <div data-i18n="Analytics">İletişim</div>
+            </a>
+        </li>
+
+        @* <li class="menu-item @(ViewBag.Page=="NewsLetter" ? "active" : "")">
+            <a href="/Admin/NewsLetter/Index" class="menu-link">
+
+                <i class="menu-icon tf-icons bi bi-newspaper"></i>
+                <div data-i18n="Analytics">Haber Bültenleri</div>
+            </a>
+        </li> *@
+
+        <li class="menu-item @(ViewBag.Page=="MailList" ? "active" : "")">
+            <a href="/Admin/Mail/Index" class="menu-link">
+
+                <i class="menu-icon tf-icons bi bi-envelope-open"></i>
+                <div data-i18n="Analytics">Mail Listesi</div>
+            </a>
+        </li>
+
+        <li class="menu-item @(ViewBag.Page=="RolProcesses" ? "active" : "")">
+            <a href="/Admin/Role/Index" class="menu-link">
+
+                <i class="menu-icon tf-icons bi-person-gear"></i>
+                <div data-i18n="Analytics">Rol İşlemleri</div>
+            </a>
+        </li>
+
+        <li class="menu-item @(ViewBag.Page=="LogOut" ? "active" : "")">
+            <a asp-area="" asp-controller="Login" asp-action="Logout" class="menu-link">
+
+                <i class="menu-icon tf-icons bi bi-box-arrow-right"></i>
+                <div data-i18n="Analytics">Çıkış Yap</div>
+            </a>
+    </ul>
+</aside>

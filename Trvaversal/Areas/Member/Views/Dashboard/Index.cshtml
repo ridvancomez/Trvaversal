@@ -1,0 +1,40 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_PanelLayout.cshtml";
+}
+
+<div class="container-fluid">
+    <div class="page-header min-height-300 border-radius-xl mt-4" style="background-image: url('/soft-ui-dashboard/assets/img/curved-images/curved0.jpg'); background-position-y: 50%;">
+        <span class="mask bg-gradient-primary opacity-6"></span>
+    </div>
+    <div class="card card-body blur shadow-blur mx-4 mt-n6 overflow-hidden">
+        <div class="row gx-4">
+            <div class="col-auto">
+                <div class="avatar avatar-xl position-relative">
+                    <img src="~/UserImages/@ViewBag.Image" alt="profile_image" style="aspect-ratio:1; object-fit:fill" class="w-100 border-radius-lg shadow-sm">
+                </div>
+            </div>
+            <div class="col-auto my-auto">
+                <div class="h-100">
+                    <h5 class="mb-1">
+                        @ViewBag.User
+                    </h5>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>
+<div class="container-fluid py-4">
+    <div class="row">
+        
+        @await Component.InvokeAsync("ProfileInformationComponent")
+
+        @await Component.InvokeAsync("GuideComponent")
+
+        
+    </div>
+</div>
+
+

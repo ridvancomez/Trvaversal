@@ -1,0 +1,63 @@
+﻿@model DataTransferObjectLayer.Concrete.AdminReservationDTO
+@{
+    ViewData["Title"] = "AddReservation";
+    Layout = "~/Views/Shared/_AdminPanelLayout.cshtml";
+
+    
+}
+
+<div class="card m-4">
+    <div class="card-header">
+        <h5 class="mb-0">Yeni Rezervasyon Ekle</h5>
+    </div>
+    <div class="card-body">
+        <form method="post">
+             <div class="row mb-3">
+                <label class="col-sm-2 col-form-label" for="basic-default-name">Kullanıcı Listesi</label>
+                <div class="col-sm-10">
+                    @Html.DropDownListFor(x => x.AppUserId, (List<SelectListItem>)ViewBag.UsersListItem ?? new List<SelectListItem>(), "Misafir Seçiniz", new { @class = "form-control" })
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label class="col-sm-2 col-form-label" for="basic-default-name">Rota Listesi</label>
+                <div class="col-sm-10">
+                    @Html.DropDownListFor(x => x.DestinationId, (List<SelectListItem>)ViewBag.DestinationListItem ?? new List<SelectListItem>(), "Rota Seçiniz", new {@class ="form-control"})
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label class="col-sm-2 col-form-label" for="basic-default-name">Misafir Sayısı</label>
+                <div class="col-sm-10">
+                    <input type="number" class="form-control" asp-for="PersonCount" id="name" placeholder="Misafir Sayısı" />
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label class="col-sm-2 col-form-label" for="basic-default-name">Check In</label>
+                <div class="col-sm-10">
+                    <input type="date" class="form-control" asp-for="CheckIn" id="value" placeholder="Check In" />
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label class="col-sm-2 col-form-label" for="basic-default-name">Değer</label>
+                <div class="col-sm-10">
+                    <select asp-for="Status" class="form-control">
+                        <option value="Gerçekleştirildi">Gerçekleştirildi</option>
+                        <option value="Onaylandı">Onaylandı</option>
+                        <option value="Beklemede">Beklemede</option>
+                        <option value="İptal Edildi">İptal Edildi</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="row justify-content-end">
+                <div class="col-sm-10">
+                    <button type="submit" class="btn btn-primary">Gönder</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+

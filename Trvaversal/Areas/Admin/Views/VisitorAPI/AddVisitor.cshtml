@@ -1,0 +1,57 @@
+﻿@model DataTransferObjectLayer.Concrete.VisitorDTO
+@{
+    ViewData["Title"] = "AddVisitor";
+    Layout = "~/Views/Shared/_AdminPanelLayout.cshtml";
+}
+
+<div class="card m-4">
+    <div class="card-header">
+        <h5 class="mb-0">Yeni Ziyaretçi Ekle</h5>
+    </div>
+    <div class="card-body">
+        <form method="post" enctype="multipart/form-data">
+            <div class="row mb-3">
+                <label class="col-sm-2 col-form-label" for="basic-default-name">İsim</label>
+                <div class="col-sm-10">
+                    <input type="text" asp-for="Name" class="form-control" />
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label class="col-sm-2 col-form-label" for="basic-default-name">Soyisim</label>
+                <div class="col-sm-10">
+                    <input type="text" asp-for="SurName" class="form-control" />
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label class="col-sm-2 col-form-label" for="basic-default-name">Şehir</label>
+                <div class="col-sm-10">
+                    <input type="text" asp-for="City" class="form-control" />
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label class="col-sm-2 col-form-label" for="basic-default-name">Ülke</label>
+                <div class="col-sm-10">
+                    <input type="text" asp-for="Country" class="form-control" />
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label class="col-sm-2 col-form-label" for="basic-default-name">E Posta</label>
+                <div class="col-sm-10">
+                    <input type="email" asp-for="Mail" class="form-control" />
+                </div>
+            </div>
+
+
+            <div class="row justify-content-end">
+                <div class="col-sm-10">
+                    <button type="submit" class="btn btn-primary">Gönder</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
