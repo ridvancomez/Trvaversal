@@ -44,7 +44,7 @@ Bu proje portföy amaçlı geliştirilmiş bir dinamik web sitesidir. Müşteril
 ![Admin Dashboard](ScreenShots/AdminDashboard.png)
 
 ### Admin Rota Sayfası
-![Admin Rota](ScreenShots/Destionation.png)
+![Admin Rota](ScreenShots/Destination.png)
 
 ### Admin Rezervasyon Sayfası
 ![Admin Rezervasyon](ScreenShots/AdminReservation.png)
