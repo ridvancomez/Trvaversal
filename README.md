@@ -26,3 +26,6 @@ Bu proje portföy amaçlı geliştirilmiş bir dinamik web sitesidir. Müşteril
 2. Veritabanı için migration işlemini gerçekleştirin:  
    ```bash
    dotnet ef database update
+
+   ### 🖼️ Ana Sayfa Arayüzü
+![Ana Sayfa](ScreenShots/UI1.png)
